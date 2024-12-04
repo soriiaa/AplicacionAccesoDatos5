@@ -1,0 +1,51 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd">
+
+    <!-- Configuración general -->
+    <diskStore path="java.io.tmpdir"/>
+
+    <!-- Configuración de caché predeterminada -->
+    <defaultCache
+           maxEntriesLocalHeap="1000"
+           maxEntriesLocalDisk="2000"
+           eternal="false"
+           timeToIdleSeconds="300"
+           timeToLiveSeconds="600"
+           overflowToDisk="true"
+           diskExpiryThreadIntervalSeconds="120"
+           memoryStoreEvictionPolicy="LRU" />
+
+    <!-- Configuración específica para la entidad Empleado -->
+    <cache name="com.example.model.Empleado"
+           maxEntriesLocalHeap="1000"
+           maxEntriesLocalDisk="2000"
+           eternal="false"
+           timeToIdleSeconds="300"
+           timeToLiveSeconds="600"
+           overflowToDisk="true"
+           diskExpiryThreadIntervalSeconds="120"
+           memoryStoreEvictionPolicy="LFU" />
+           
+    <!-- Configuración específica para la entidad EmpleadoRegular -->
+    <cache name="com.example.model.EmpleadoRegular"
+           maxEntriesLocalHeap="500"
+           maxEntriesLocalDisk="1000"
+           eternal="false"
+           timeToIdleSeconds="200"
+           timeToLiveSeconds="400"
+           overflowToDisk="true"
+           diskExpiryThreadIntervalSeconds="120"
+           memoryStoreEvictionPolicy="LFU" />
+
+    <!-- Configuración específica para la entidad EmpleadoContratado -->
+    <cache name="com.example.model.EmpleadoContratado"
+           maxEntriesLocalHeap="500"
+           maxEntriesLocalDisk="1000"
+           eternal="false"
+           timeToIdleSeconds="200"
+           timeToLiveSeconds="400"
+           overflowToDisk="true"
+           diskExpiryThreadIntervalSeconds="120"
+           memoryStoreEvictionPolicy="LFU" />
+
+</ehcache>
